@@ -1,6 +1,7 @@
 
 import Day1 from "./components/day1"
 import Day2 from "./components/day2"
+import Day3 from "./components/day3"
 
 export default [
     {
@@ -12,5 +13,10 @@ export default [
         title:"Day2",
         name:"天气预报",
         screen: Day2,
+    },
+    {
+        title:"Day3",
+        name:"动画启动页面",
+        screen: Day3,
     }
 ]

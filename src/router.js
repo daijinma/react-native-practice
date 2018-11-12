@@ -6,7 +6,7 @@ import {
 import {createStackNavigator} from "react-navigation"
 import routerMap from "./routerMap"
 import Home from "./pages/home"
-import Head from "./components/head"
+// import Head from "./components/head"
 
 let settingsMap = {};
 routerMap.forEach(item=>{
@@ -22,13 +22,11 @@ let navigateMap = {
     ...settingsMap
 }
 
-console.log(navigateMap)
-
 export default createStackNavigator(navigateMap , {
     initRouterName:"Day1",
-    // navigationOptions: {
-    //     headerTitle: <Head />,
-    // },
+    navigationOptions: {
+        headerMode: "nonde",
+    },
 })
 
 
