@@ -2,6 +2,7 @@
 import Day1 from "./components/day1"
 import Day2 from "./components/day2"
 import Day3 from "./components/day3"
+import Day4 from "./components/day4"
 
 export default [
     {
@@ -23,6 +24,6 @@ export default [
     {
         title:"Day4",
         name:"列表下拉监听",
-        screen: Day3,
+        screen: Day4,
     }
 ]

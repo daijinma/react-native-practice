@@ -18,7 +18,7 @@ export default class App extends Component {
     this._clearInterval = this._clearInterval.bind(this)
   }
   state={
-    showAdTime:-1,
+    showAdTime:1,
     timeId:null,
   }
   componentDidMount(){

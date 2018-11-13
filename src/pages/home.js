@@ -115,7 +115,12 @@ const styles = StyleSheet.create({
     }
 })
 
+// var getRandomColor = function(){
+//     return '#'+(Math.random()*0xffffff<<0).toString(16);
+// }
+  
 var getRandomColor = function(){
-    return '#'+(Math.random()*0xffffff<<0).toString(16);
-}
+    return '#'+'0123456789abcdef'.split('').map(function(v,i,a){
+      return i>5 ? null : a[Math.floor(Math.random()*16)] }).join('');
+  }
   
