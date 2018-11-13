@@ -10,7 +10,7 @@ import React, {Component} from 'react';
 import Router from "./src/router"
 import splashScreen from "react-native-splash-screen"
 import Ad from "./src/components/day3/ad"
-import {Alert} from "react-native"
+import {View, StyleSheet} from "react-native"
 
 export default class App extends Component {
   constructor(props){
@@ -18,12 +18,12 @@ export default class App extends Component {
     this._clearInterval = this._clearInterval.bind(this)
   }
   state={
-    showAdTime:6,
+    showAdTime:-1,
     timeId:null,
   }
   componentDidMount(){
     splashScreen.hide();
-    
+    if(this.state.showAdTime<=0) return
     this.state.timeId = setInterval(()=>{
       this.setState({
         showAdTime: this.state.showAdTime-1,
@@ -45,15 +45,29 @@ export default class App extends Component {
   }
 
   render() {
-    if(this.state.showAdTime>=0){
-      return <Ad 
-        time={this.state.showAdTime} 
-        close={()=>{
-          console.log(this.clearInterval)
-          this._clearInterval();
-        }}
-      />
-    }
-    return <Router />
+    return (
+      <View style={[this.state.showAdTime<0?{
+        marginTop: 50
+      }:{}, styles.main]}>
+        {
+          this.state.showAdTime>=0?
+            <Ad 
+              time={this.state.showAdTime} 
+              close={()=>{
+                console.log(this.clearInterval)
+                this._clearInterval();
+              }}
+            />
+            :
+            <Router />
+        }
+      </View>)
   }
 }
+
+
+const styles = StyleSheet.create({
+  main:{
+    flex:1,
+  }
+})

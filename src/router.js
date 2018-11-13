@@ -25,7 +25,8 @@ let navigateMap = {
 export default createStackNavigator(navigateMap , {
     initRouterName:"Day1",
     navigationOptions: {
-        headerMode: "nonde",
+        headerMode: "none",
+        header: null,
     },
 })
 
