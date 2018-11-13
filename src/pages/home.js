@@ -16,6 +16,8 @@ import {
 
 import Util from '../utils';
 import routerMap from '../routerMap';
+import RefreshAble  from "../components/refreshable";
+
 
 
 export default class HomeScreen extends Component {
@@ -26,17 +28,21 @@ export default class HomeScreen extends Component {
     }
     static navigationOptions =()=>({
         title: "首页",
-      })
-    
-    
+    })
+
+    state = {
+        refreshing: false,
+        scrollList : null,
+    }
+        
     render(){
         return (
             <View>
-                <ScrollView style={styles.mainView}>
+                <RefreshAble>
                     <View style={styles.touchBoxContent}>
                         {this.getBox()}
                     </View>
-                </ScrollView>
+                </RefreshAble>
             </View>
         )
     }
@@ -67,9 +73,6 @@ export default class HomeScreen extends Component {
 const size = Util.size();
 
 const styles = StyleSheet.create({
-    mainView:{
-        marginTop:63,
-    },
     touchBoxContent:{
         flexDirection: "row",
         flexWrap:"wrap",

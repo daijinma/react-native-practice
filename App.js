@@ -46,15 +46,12 @@ export default class App extends Component {
 
   render() {
     return (
-      <View style={[this.state.showAdTime<0?{
-        marginTop: 50
-      }:{}, styles.main]}>
+      <View style={[styles.main]}>
         {
           this.state.showAdTime>=0?
             <Ad 
               time={this.state.showAdTime} 
               close={()=>{
-                console.log(this.clearInterval)
                 this._clearInterval();
               }}
             />

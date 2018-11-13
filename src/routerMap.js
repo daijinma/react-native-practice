@@ -16,7 +16,13 @@ export default [
     },
     {
         title:"Day3",
-        name:"动画启动页面",
+        name:"启动页",
+        screen: Day3,
+    }
+    ,
+    {
+        title:"Day4",
+        name:"列表下拉监听",
         screen: Day3,
     }
 ]

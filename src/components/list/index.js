@@ -1,5 +1,14 @@
 import React ,{Component} from "react";
-import {StyleSheet, Text, View, Image, FlatList, NativeModules, TouchableWithoutFeedback} from 'react-native';
+import {
+    StyleSheet, 
+    Text, 
+    View, 
+    Image, 
+    FlatList, 
+    NativeModules, 
+    TouchableWithoutFeedback,
+    RefreshControl,
+} from 'react-native';
 
 const NetInfo = NativeModules.NetInfo;
 
